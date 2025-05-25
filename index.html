@@ -18,6 +18,9 @@
             <a href="#" class="nav-logo">
                 <span></span>
             </a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="nav-links">
                 <a href="#home" class="nav-item">Home</a>
                 <a href="#projects" class="nav-item">Projects</a>
@@ -26,13 +29,14 @@
             </div>
         </div>
     </nav>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <!-- Hero Section with Profile -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="profile-grid">
                 <!-- Left Side - Profile Image and Social Links -->
-                <div class="profile-left fade-up">
+                <div class="profile-left">
                     <div class="profile-img-wrapper">
                         <div class="profile-img-container">
                             <img src="assets/profile.jpeg" alt="Kasireddi Yeswanth" class="profile-img">
@@ -50,7 +54,7 @@
                 </div>
                 
                 <!-- Right Side - Profile Content -->
-                <div class="profile-right fade-up">
+                <div class="profile-right">
                     <h1>Hi!</h1>
                     <h2 class="profile-name">Kasireddi Yeswanth</h2>
                     <p class="profile-title">Electronics & Communication Engineering Student</p>

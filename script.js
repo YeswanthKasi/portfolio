@@ -369,12 +369,35 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Mobile menu toggle (if needed in the future)
-// This is a placeholder for mobile menu functionality
-const mobileMenuToggle = () => {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-};
+// Mobile menu toggle
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+if (mobileMenuToggle && navLinks && mobileMenuOverlay) {
+    function openMenu() {
+        navLinks.classList.add('active');
+        mobileMenuOverlay.classList.add('active');
+        document.body.classList.add('menu-open');
+    }
+    function closeMenu() {
+        navLinks.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+    mobileMenuToggle.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+    // Close menu when overlay is clicked
+    mobileMenuOverlay.addEventListener('click', closeMenu);
+}
 
 // Scroll animation handling
 const scrollElements = document.querySelectorAll('.scroll-trigger, .project-card, .skill-progress, .fade-up');
@@ -391,15 +414,12 @@ const displayScrollElement = (element) => {
     element.classList.add('visible');
 };
 
-const hideScrollElement = (element) => {
-    element.classList.remove('visible');
-};
-
 const handleScrollAnimation = () => {
     scrollElements.forEach((el) => {
         if (elementInView(el, 90)) {
             displayScrollElement(el);
         }
+        // Do NOT remove 'visible' class when out of view
     });
 };
 
@@ -443,7 +463,7 @@ const fadeUpObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            fadeUpObserver.unobserve(entry.target);
+            fadeUpObserver.unobserve(entry.target); // Only animate once
         }
     });
 }, { threshold: 0.1 });
