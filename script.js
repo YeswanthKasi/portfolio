@@ -358,6 +358,13 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         });
     }
+
+    // Auto-scroll for project screenshots if more than one image
+    document.querySelectorAll('.screenshots-scroll').forEach(scrollDiv => {
+        if (scrollDiv.children.length > 1) {
+            scrollDiv.classList.add('auto-scroll');
+        }
+    });
 });
 
 // Window resize handler for binary rain
