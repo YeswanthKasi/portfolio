@@ -2163,6 +2163,9 @@ a:hover {
     transform: translateY(20px);
     opacity: 0;
     animation: bounceIn var(--bounce-duration) var(--bounce-timing) forwards;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
 }
 
 .certification-card:hover {
