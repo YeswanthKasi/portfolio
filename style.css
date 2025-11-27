@@ -68,8 +68,8 @@
     --spring-timing: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Premium Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* Premium Fonts - Optimized weight loading */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 body {
     font-family: 'Inter', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1273,6 +1273,13 @@ body {
 @keyframes skillShine {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
+}
+
+/* Respect reduced motion for skill shine animation */
+@media (prefers-reduced-motion: reduce) {
+    .skill-progress::after {
+        animation: none;
+    }
 }
 
 .skill-progress.animate {
@@ -3548,4 +3555,29 @@ a:hover {
 .copyright {
     font-size: 0.85rem;
     color: var(--text-muted);
+}
+
+/* Ripple Effect Animation */
+@keyframes rippleEffect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Scroll Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.experience-item.animate-on-scroll {
+    opacity: 1;
+    transform: none;
 }
