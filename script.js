@@ -320,33 +320,7 @@ document.querySelectorAll('.btn, .nav-item').forEach(button => {
     });
 });
 
-// Add CSS for ripple animation
-const rippleStyle = document.createElement('style');
-rippleStyle.textContent = `
-    @keyframes rippleEffect {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-    
-    .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .animate-on-scroll.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .experience-item.animate-on-scroll {
-        opacity: 1;
-        transform: none;
-    }
-`;
-document.head.appendChild(rippleStyle);
+// Add CSS for ripple animation - moved to style.css for better maintainability
 
 // Skill bars animation
 document.querySelectorAll('.skill-progress').forEach(bar => {
@@ -373,8 +347,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }, 2000);
-});
-
-// Console Easter Egg
-console.log('%c 🚀 Kasireddi Yeswanth Portfolio ', 'background: linear-gradient(135deg, #00d4ff, #7c3aed); color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; font-weight: bold;');
-console.log('%c Built with ❤️ using HTML, CSS & JavaScript ', 'color: #94a3b8; font-size: 12px;'); 
+}); 
