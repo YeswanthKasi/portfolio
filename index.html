@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasireddi Yeswanth - Portfolio </title>
+    <meta name="description" content="Kasireddi Yeswanth - Systems Engineer & Android Developer Portfolio. Explore my projects, skills, and experience in mobile development and cloud technologies.">
+    <meta name="keywords" content="Kasireddi Yeswanth, Android Developer, Systems Engineer, Portfolio, Kotlin, Firebase, Mobile Development">
+    <meta name="author" content="Kasireddi Yeswanth">
+    <meta name="theme-color" content="#00d4ff">
+    <title>Kasireddi Yeswanth - Portfolio | Systems Engineer & Developer</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' font-family='Google Sans'><tspan fill='%231a73e8'>K</tspan><tspan fill='%2334a853'>Y</tspan></text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%2300d4ff'/><stop offset='100%25' style='stop-color:%237c3aed'/></linearGradient></defs><text y='80' font-size='80' font-family='Inter' font-weight='800' fill='url(%23g)'>KY</text></svg>">
     <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
-    <!-- Tech Background Animation -->
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <span class="loader-text">KY</span>
+        </div>
+    </div>
+
+    <!-- Futuristic Background Elements -->
     <div class="tech-background" id="techBackground"></div>
+    <div class="grid-pattern"></div>
+    <div class="particles-container" id="particlesContainer"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-content">
             <a href="#" class="nav-logo">
                 <span></span>
@@ -26,7 +50,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="nav-links">
-                <a href="#home" class="nav-item">Home</a>
+                <a href="#home" class="nav-item active">Home</a>
                 <a href="#projects" class="nav-item">Projects</a>
                 <a href="#experience" class="nav-item">Experience</a>
                 <a href="#certifications" class="nav-item">Certifications</a>
@@ -417,7 +441,10 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Kasireddi Yeswanth. All rights reserved.</p>
+        <div class="footer-content">
+            <p class="footer-text">Designed & Built with <span class="heart">❤</span> by Kasireddi Yeswanth</p>
+            <p class="copyright">&copy; 2025 All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
