@@ -22,6 +22,30 @@ function initAnimations() {
     createParticles();
     initScrollAnimations();
     initNavHighlight();
+    updateExperienceDuration();
+}
+
+// Calculate Experience Duration
+function updateExperienceDuration() {
+    const startDate = new Date('2025-07-01');
+    const currentDate = new Date();
+    
+    let months = (currentDate.getFullYear() - startDate.getFullYear()) * 12;
+    months -= startDate.getMonth();
+    months += currentDate.getMonth();
+    
+    // Adjust if current day is before start day in the month (optional, keeping it simple for now)
+    if (currentDate.getDate() < startDate.getDate()) {
+        months--;
+    }
+
+    // Ensure non-negative
+    if (months < 0) months = 0;
+    
+    const durationElement = document.getElementById('infosys-duration');
+    if (durationElement) {
+        durationElement.textContent = `Jul 2025 - Present · ${months} mos`;
+    }
 }
 
 // Create Floating Particles
@@ -149,7 +173,7 @@ function initScrollAnimations() {
                 
                 // Animate skill bars
                 if (entry.target.classList.contains('skill-progress')) {
-                    const width = entry.target.parentElement.parentElement.querySelector('.skill-level')?.textContent || '0%';
+                    const width = entry.target.getAttribute('data-width') || '0%';
                     entry.target.style.width = width;
                 }
             }
@@ -188,7 +212,8 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     if (heroContent && scrolled < window.innerHeight) {
         heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+        // Opacity fade removed to keep cards visible
+        // heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
     }
 });
 
@@ -242,7 +267,7 @@ document.querySelectorAll('.social-link, .btn').forEach(el => {
 });
 
 // Tilt effect for cards
-document.querySelectorAll('.project-card, .profile-card, .certification-card').forEach(card => {
+document.querySelectorAll('.profile-card, .certification-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;

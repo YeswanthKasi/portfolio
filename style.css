@@ -176,29 +176,29 @@ body {
    ============================================ */
 .cursor-dot {
     position: fixed;
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background: var(--primary-color);
     border-radius: 50%;
     pointer-events: none;
     z-index: 99998;
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
-    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
 }
 
 .cursor-dot.hover {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     background: var(--accent-pink);
-    box-shadow: 0 0 15px var(--accent-pink), 0 0 30px var(--accent-pink);
+    box-shadow: 0 0 15px var(--accent-pink);
 }
 
 .cursor-outline {
     position: fixed;
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(0, 212, 255, 0.5);
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 212, 255, 0.5);
     border-radius: 50%;
     pointer-events: none;
     z-index: 99997;
@@ -207,9 +207,10 @@ body {
 }
 
 .cursor-outline.hover {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-color: rgba(236, 72, 153, 0.5);
+    background: rgba(236, 72, 153, 0.05);
 }
 
 /* ============================================
@@ -790,7 +791,7 @@ body {
    PROJECTS SECTION - FUTURISTIC CARDS
    ============================================ */
 .projects {
-    padding: var(--section-spacing) 0;
+    padding: 2rem 0 var(--section-spacing) 0;
     background: transparent;
     position: relative;
     max-width: 1400px;
