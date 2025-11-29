@@ -469,8 +469,8 @@ body {
     background: transparent;
     margin-bottom: 0;
     display: block;
-    padding: calc(70px + var(--spacing-unit)) var(--spacing-unit) 3rem;
-    min-height: 100vh;
+    padding: calc(70px + var(--spacing-unit)) var(--spacing-unit) 8rem;
+    min-height: calc(100vh + 10rem);
     z-index: 10;
 }
 
@@ -700,6 +700,9 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 10;
 }
 
 .profile-card {
@@ -766,11 +769,11 @@ body {
    PROJECTS SECTION - FUTURISTIC CARDS
    ============================================ */
 .projects {
-    padding: 2rem 0 var(--section-spacing) 0;
+    padding: 8rem 0 var(--section-spacing) 0;
     background: transparent;
     position: relative;
     max-width: 1400px;
-    margin: 4rem auto 0;
+    margin: 0 auto;
     z-index: 1;
 }
 
