@@ -80,7 +80,7 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     position: relative;
-    cursor: none;
+    cursor: default;
 }
 
 /* Hide cursor on touch devices */
@@ -175,42 +175,11 @@ body {
    CUSTOM CURSOR - FUTURISTIC
    ============================================ */
 .cursor-dot {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99998;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
-    box-shadow: 0 0 10px var(--primary-color);
-}
-
-.cursor-dot.hover {
-    width: 8px;
-    height: 8px;
-    background: var(--accent-pink);
-    box-shadow: 0 0 15px var(--accent-pink);
+    display: none;
 }
 
 .cursor-outline {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgba(0, 212, 255, 0.5);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99997;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
-}
-
-.cursor-outline.hover {
-    width: 50px;
-    height: 50px;
-    border-color: rgba(236, 72, 153, 0.5);
-    background: rgba(236, 72, 153, 0.05);
+    display: none;
 }
 
 /* ============================================
@@ -502,6 +471,7 @@ body {
     display: block;
     padding: calc(70px + var(--spacing-unit)) var(--spacing-unit) 3rem;
     min-height: 100vh;
+    z-index: 1;
 }
 
 .hero::before {
@@ -1251,8 +1221,9 @@ body {
     background: var(--gradient-primary);
     border-radius: 4px;
     position: relative;
-    transition: width 1s var(--spring-timing);
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    width: 0;
 }
 
 .skill-progress::after {
