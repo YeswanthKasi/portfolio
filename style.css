@@ -3562,3 +3562,95 @@ a:hover {
     opacity: 1;
     transform: none;
 }
+
+
+/* Premium polish upgrades */
+:root {
+    --premium-white: rgba(255,255,255,0.82);
+    --premium-gloss: linear-gradient(120deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.02) 42%, rgba(255,255,255,0.11) 100%);
+}
+
+body {
+    background: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.04) 0%, transparent 30%), var(--background-color);
+}
+
+.navbar {
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.profile-img-wrapper, .project-card, .experience-item, .certification-card, .profile-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-img-wrapper::before, .project-card::before, .experience-item::before, .certification-card::before, .profile-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--premium-gloss);
+    opacity: 0;
+    transition: opacity 0.45s var(--smooth-timing);
+    pointer-events: none;
+}
+
+.profile-img-wrapper:hover::before, .project-card:hover::before, .experience-item:hover::before, .certification-card:hover::before, .profile-card:hover::before {
+    opacity: 1;
+}
+
+.project-card, .experience-item, .certification-card, .profile-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 12px 40px rgba(7, 11, 34, 0.55), inset 0 1px 0 rgba(255,255,255,0.08);
+    transition: transform 0.45s var(--smooth-timing), box-shadow 0.45s var(--smooth-timing), border-color 0.45s var(--smooth-timing);
+}
+
+.project-card:hover, .experience-item:hover, .certification-card:hover, .profile-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(0,212,255,0.45);
+    box-shadow: 0 16px 60px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(0,212,255,0.22), 0 0 34px rgba(0,212,255,0.25);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .35rem .8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    font-size: .78rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--premium-white);
+    margin-bottom: .8rem;
+}
+
+.profile-highlight {
+    margin-top: .35rem;
+    color: #dbeafe;
+    font-weight: 500;
+    max-width: 52ch;
+}
+
+.btn {
+    transition: transform 0.35s var(--smooth-timing), box-shadow 0.35s var(--smooth-timing), filter 0.35s var(--smooth-timing);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.07);
+    box-shadow: 0 10px 30px rgba(0,212,255,0.24);
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
