@@ -1,0 +1,6 @@
+{
+  "name": "Jaswanth Kasireddi Portfolio",
+  "description": "Professional bilingual portfolio website for Jaswanth Kasireddi, male nurse (Krankenpfleger) seeking career opportunities in Germany, featuring EQF equivalents, CEFR language levels, and a live AI Recruiting Twin helper.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

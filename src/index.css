@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Premium Olive Green Theme Palette */
+  --color-olive-50: #f5f7f3;
+  --color-olive-100: #e6ebdf;
+  --color-olive-200: #cee0c1;
+  --color-olive-300: #abc997;
+  --color-olive-400: #86ad6e;
+  --color-olive-500: #628e4a;
+  --color-olive-600: #4c7138;
+  --color-olive-700: #3b572c;
+  --color-olive-800: #314725;
+  --color-olive-900: #293b20;
+  --color-olive-950: #141f10;
+
+  /* Custom Warm White Options */
+  --color-alabaster: #f9faf7;
+  --color-cream: #f4faf0;
+}
+
+/* Base resets for a smooth experience */
+body {
+  background-color: #f9faf7;
+  color: #141f10;
+  overflow-x: hidden;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f7f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #cee0c1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #abc997;
+}
