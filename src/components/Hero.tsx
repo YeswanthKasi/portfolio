@@ -17,25 +17,40 @@ interface HeroProps {
 export default function Hero({ language, onScrollToSection }: HeroProps) {
   const t = translations[language];
 
-  // Profile image loader - try multiple sources
-  const [imageSrc, setImageSrc] = useState<string>('/profile.jpg');
+  // Profile image loader - try multiple sources (prefer files placed in `/assets/`)
+  const [imageSrc, setImageSrc] = useState<string>('/assets/profile.jpg');
   const [imageErrCount, setImageErrCount] = useState<number>(0);
 
   const handleImageError = () => {
     if (imageErrCount === 0) {
       setImageSrc('/profile.png');
       setImageErrCount(1);
-    } else if (imageErrCount === 1) {
-      setImageSrc('/jaswanth-profile.jpg');
+      return;
+    }
+    if (imageErrCount === 1) {
+      setImageSrc('/assets/jaswanth-profile.jpg');
       setImageErrCount(2);
-    } else if (imageErrCount === 2) {
-      setImageSrc('/jaswanth.jpg');
+      return;
+    }
+    if (imageErrCount === 2) {
+      setImageSrc('/jaswanth-profile.jpg');
       setImageErrCount(3);
-    } else if (imageErrCount === 3) {
-      setImageSrc('/avatar.jpg');
+      return;
+    }
+    if (imageErrCount === 3) {
+      setImageSrc('/assets/jaswanth.jpg');
       setImageErrCount(4);
+      return;
+    }
+    if (imageErrCount === 4) {
+      setImageSrc('/jaswanth.jpg');
+      setImageErrCount(1);
+    } else if (imageErrCount === 5) {
+      setImageSrc('/avatar.jpg');
+      setImageErrCount(6);
+      return;
     } else {
-      setImageErrCount(5); // Render SVG fallback
+      setImageErrCount(7); // Render SVG fallback
     }
   };
 
