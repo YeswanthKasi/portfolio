@@ -2,6 +2,12 @@
 
 Welcome to my professional portfolio repository! This is a modern, responsive portfolio website built with TypeScript, CSS, and HTML.
 
+## 🌐 Live Portfolio
+
+**View my portfolio:** https://portfolio-g9el8owom-jaswanth-kasireddi-s-projects.vercel.app/
+
+---
+
 ## 📋 About
 
 This repository contains my professional resume and portfolio showcasing my skills, projects, and experience.
@@ -43,25 +49,34 @@ To build for production:
 npm run build
 ```
 
-## 📱 GitHub Pages Deployment
+## 🚀 Vercel Deployment
 
-This portfolio is deployed via GitHub Pages. To enable GitHub Pages for this repository:
+This portfolio is deployed on **Vercel** for optimal performance and scalability.
 
-1. Go to repository Settings → Pages
-2. Select the branch to publish (typically `main` or `gh-pages`)
-3. Choose the folder to publish from (`/root` or `/docs`)
-4. Your site will be available at `https://JaswanthKasireddi.github.io/Portfolio`
+**Deployed at:** https://portfolio-g9el8owom-jaswanth-kasireddi-s-projects.vercel.app/
+
+### Deploy Your Own
+
+1. Push your code to GitHub
+2. Go to [Vercel](https://vercel.com)
+3. Click **Add New Project**
+4. Import your GitHub repository
+5. Configure build settings (auto-detected for Vite)
+6. Click **Deploy**
+
+Your portfolio will be live within minutes!
 
 ## 📚 Technologies Used
 
 - **TypeScript** - Primary language for type-safe development
-- **CSS** - Styling and responsive design
-- **HTML** - Markup structure
-- **GitHub Pages** - Hosting & deployment
+- **React** - UI library
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first styling
+- **Vercel** - Hosting & deployment
 
 ## 📄 Resume
 
-View my professional resume and project portfolio on the website.
+View my professional resume and project portfolio at: https://portfolio-g9el8owom-jaswanth-kasireddi-s-projects.vercel.app/
 
 ## 📧 Contact
 
